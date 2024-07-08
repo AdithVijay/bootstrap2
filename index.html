@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="index.css">
+    <style>
+      .flip-horizontal {
+        transform: scaleX(-1);
+      }
+      .nav-link {
+            position: relative;
+            display: inline-block;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: black;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        .nav-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        .responsive-img {
+            display: none;
+        }
+        @media (max-width: 600px) {
+            .img-small {
+                display: block;
+                height: 250px;
+            }
+        }
+        @media (min-width: 601px) and (max-width: 800px) {
+            .img-medium {
+                display: block;
+                height: 300px;
+            }
+        }
+        @media (min-width: 801px) {
+            .img-large {
+                display: block;
+                height: 400px;
+            }     
+         }
+         @media (max-width: 1153px) {
+            .object {
+                visibility: hidden;
+            }     
+         }
+         @media (max-width: 1153px) {
+            .elements {
+                display: flex;
+                flex-direction: column;
+            }     
+         }
+         @media (max-width: 1153px) {
+            .cardmain {
+                display: flex;
+                flex-direction: column;
+            }     
+         }
+        
+            .gamecontent {
+              display: none;
+            }     
+     
+         @media (max-width: 1101px) {
+            .gamecontent {
+              display: block;
+            }     
+         }
+         @media (max-width: 1100px) {
+            .maingame {
+              display: none;
+              background-color: aquamarine;
+            }     
+         }
+        ul li {
+          list-style: none;
+        }
+    </style>
+</head>
+<body>
+
+  <!-- navbar -->
+
+    <nav class=" hai navbar navbar-expand-lg " style="position: sticky;top: 0;z-index: 100; background-color: rgb(254, 254, 254);">
+        <div class="container">
+          <a class="navbar-brand" href="#"><img width="100px" src="images/logo.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class=" hai navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Microsoft 365</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Teams</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Copilot</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Windows</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Xbox</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Support</a>
+              </li>
+            </ul>
+            <span class="navbar-text ">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                <li class="nav-item">
+                  <a class="nav-link active pe-3" href="#">All Microsoft</a>  
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="#"> Search <i class="bi bi-search img-fluid pe-2"></i></a> 
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="#"> Cart <i class="bi bi-cart3 pe-2"></i></a>  
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active pe-2" href="#"> Sign in</a>  
+                </li>
+              </ul>
+            </span>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Carasouel -->
+
+      <div>
+        <div id="carouselExampleIndicators" class="carousel slide">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="images/imgg1.avif" class="responsive-img img-small" height="446px" width="100%" alt="Small Image">
+              <img src="images/img1.avif" class="responsive-img img-medium" height="446px" width="100%" alt="Medium Image">
+              <img src="images/carsouel1.avif" class="responsive-img img-large" height="446px" width="100%" alt="Large Image">
+            </div>
+            <!-- content -->
+            <div class="object" style="position: absolute; width: 540px;height: 335px;display: flex;align-items: center;justify-content: center;flex-direction: column;text-align: center;background-color: white; margin-left:30px ;margin-top: 30px;" >
+              <h1>
+                Meet Surface Laptop
+              </h1>
+                <div>
+                  This laptop's unrivalled flexibility and AI features like Live Captions and Cocreator, enable you to do more than you ever imagined.
+                </div>
+                <button style="height: 40px;width: 110px; border: none;background-color: #0259C2;">Learn more</button>
+            </div>
+            <!-- content -->
+            <div class="carousel-item">
+              <img src="images/imgg2.avif" class="responsive-img img-small" height="446px" width="100%" alt="Small Image">
+              <img src="images/imgg2.avif" class="responsive-img img-medium" height="446px" width="100%" alt="Medium Image">
+              <img src="images/carsouel2.avif" class="responsive-img img-large" height="446px" width="100%" alt="Large Image">
+            </div>
+            <!-- content -->
+            <div class="object" style="position: absolute; width: 540px;height: 335px;display: flex;align-items: center;justify-content: center;flex-direction: column;text-align: center; margin-left:30px ;margin-top: 30px;" >
+              <h1>
+                Meet Surface Laptop
+              </h1>
+                <div>
+                  This laptop's unrivalled flexibility and AI features like Live Captions and Cocreator, enable you to do more than you ever imagined.
+                </div>
+                <button style="height: 40px;width: 110px; border: none;background-color: #0259C2;">Learn more</button>
+            </div>
+            <!-- content -->
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+        <!-- icons -->
+
+        <div class="elements" style="display: flex;justify-content: center;align-items: center;padding-top: 16px;">
+          <div style="text-align: center; margin-right: 30px;padding-bottom: 5px;">
+            <img height="60px" src="images/ogo1.png" alt="">
+            <div>Choose your Microsoft 365</div>
+          </div>
+          <div style="text-align: center;margin-right: 30px;padding-bottom: 5px;">
+            <img height="60px" src="images/ogo2.png" alt="">
+            <div>Shop Xbox</div>
+          </div>
+          <div style="text-align: center;margin-right: 30px;padding-bottom: 5px;">
+            <img height="60px" src="images/ogo3.png" alt="">
+            <div>Get Windows 11</div>
+          </div>
+          <div style="text-align: center;margin-right: 30px;padding-bottom: 5px;">
+            <img height="60px" src="images/ogo4.png" alt="">
+            <div>Explore Surface devices</div>
+          </div>
+        </div>
+      
+        <!-- cards -->
+
+          
+            <div class="container-fluid mx-auto mb-5" >
+              <div class="row d-flex justify-content-center">
+                <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 row-cols-1">
+                  <div class="col" >
+                    <div class="card" style="width:100%; margin-top: 1px;margin-top: 30px;">
+                      <img src="images/card1.avif" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card" style="width: 100% ;margin-top: 30px;">
+                      <img src="images/card2.avif" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card" style="width: 100%;margin-top: 30px;">
+                      <img src="images/card3.webp" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col" >
+                    <div class="card" style="width: 100%;margin-top: 30px;">
+                      <img src="images/card4.webp" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>   
+           
+
+            <!-- game content  -->
+
+        <div class="maingame mt-5 m-5 position-relative"  >
+          <img src="images/game.avif" width="100%" alt="">
+            <div class=" position-absolute top-0 text-white w-30" style="width: 32%;margin-top: 80px;margin-left: 30px; padding-bottom: 50px;">
+                <div class="gamecontent1 fs-1" >Xbox Game Pass Ultimate</div>
+                <div >Play new games on day one. Plus, enjoy hundreds of high-quality games with friends on console and PC.Join now</div>
+                <button style="width:30%; border: none;background-color: #0259C2;margin-top:20px;">Clickme</button>
+            </div>
+        </div>
+        <div>
+          <div class="gamecontent">
+            <div style="margin-left: 70px; margin-right: 70px;">
+              <img src="images/game2.png" width="100%"  style="height: 0%;"  alt="">
+            </div>
+            <div style="display: flex;flex-direction: column;align-items: center;justify-content: center;text-align: center;">
+              <div class="fs-1">Xbox Game Pass Ultimate</div>
+              <div >Play new games on day one. Plus, enjoy hundreds of high-quality games with friends on console and PC.Join now</div>
+              <button style="width:150px; height: 40px; border: none;background-color: #30619c;margin-top:20px;color: white;border-radius: 6px;">Clickme</button>
+            </div>
+        </div>
+        </div>
+
+            <!-- cards -->
+
+          
+            <div class="container-fluid mx-auto mb-5" >
+              <div class="row d-flex justify-content-center " style="padding-top: 30px;">
+                <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 row-cols-1">
+                  <div class="col" >
+                    <div class="card" style="width:100%; margin-top: 1px;">
+                      <img src="images/card1.avif" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card" style="width: 100% ;margin-top: 30px;">
+                      <img src="images/card2.avif" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card" style="width: 100%;margin-top: 30px;">
+                      <img src="images/card3.webp" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col" >
+                    <div class="card" style="width: 100%;margin-top: 30px;">
+                      <img src="images/card4.webp" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>   
+
+<!-- footer -->
+          <!-- <div class="container">
+            <div>
+              What's new            
+            </div>
+            <div>
+              Surface Pro
+            </div>
+            <div>
+              Surface Laptop
+            </div>
+            <div>
+              Microsoft Copilot
+            </div>
+            <div>
+              Microsoft 365
+            </div>
+            <div>
+              Windows 11 apps
+            </div>
+          </div> -->
+
+         
+<footer>
+  <div class="container-fluid mx-auto" style="background-color: #F2F2F2;">
+  <div class="row d-flex justify-content-center align-items  " style="padding-top: 60px;padding-bottom: 30px;">
+    <!----------- Footer first section----------------- -->
+  <div class="col-md-2 ">
+    
+    <ul>
+      <h5>What's new</h5>
+      <li class="fw-light">Surface Pro</li>
+      <li class="fw-light">Microsoft Copilot </li>
+      <li class="fw-light">Microsoft 365</li>
+      <li class="fw-light">Windows 11 apps</li>
+    </ul>
+  </div>
+  <!-------- Footer Second section------ -->
+  <div class="col-md-2 ">
+<ul>
+    <h5>Microsoft Store </h5>
+    <li class="fw-light">Account profile</li>
+    <li class="fw-light">Microsoft Store Support</li>
+    <li class="fw-light">Returns</li>
+    <li class="fw-light">Order tracking</li>
+  </ul>
+  </div>
+  <!-------- Footer Third section----------- -->
+  <div class="col-md-2 ">
+    <ul>
+    <h5>Education</h5>
+    <li class="fw-light">Microsoft in education</li>
+    <li class="fw-light">Devices for education</li>
+    <li class="fw-light">Microsoft Teams for Education</li>
+    <li class="fw-light">Microsoft 365 Education</li>
+    <li class="fw-light">Office Education</li>
+    <li class="fw-light">Educator training and development</li>
+    </ul>
+  </div>
+  <!-------- Footer Third section----------- -->
+  <div class="col-md-2 ">
+    <ul>
+    <h5>Business</h5>
+    <li class="fw-light">Microsoft Cloud</li>
+    <li class="fw-light">Microsoft Security</li>
+    <li class="fw-light">Dynamics 365</li>
+    <li class="fw-light">Microsoft 365</li>
+    <li class="fw-light">Microsoft Advertising</li>
+    </ul>
+  </div>
+  <div class="col-md-2 ">
+    <ul>
+    <h5>Developer & IT</h5>
+    <li class="fw-light">Developer Center</li>
+    <li class="fw-light">Documentation</li>
+    <li class="fw-light">Microsoft Learn</li>
+    <li class="fw-light">Microsoft Tech Community</li>
+    <li class="fw-light">Azure Marketplace</li>
+    </ul>
+  </div>
+</div>
+</div>
+ <!---------- Footer Fourth Social media Section------------ -->
+</body>
+</html>
